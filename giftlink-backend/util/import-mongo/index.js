@@ -3,7 +3,7 @@ const MongoClient = require('mongodb').MongoClient;
 const fs = require('fs');
 
 // MongoDB connection URL with authentication options
-let url = `${process.env.MONGO_URL}`;
+let url = `mongodb://root:uZ7D1aeBsRrUjYDUHxt4KOuq@172.21.115.48:27017`;
 let filename = `${__dirname}/gifts.json`;
 const dbName = 'giftdb';
 const collectionName = 'gifts';
@@ -14,6 +14,7 @@ const data = JSON.parse(fs.readFileSync(filename, 'utf8')).docs;
 // connect to database and insert data into the collection
 async function loadData() {
     const client = new MongoClient(url);
+    console.log("HELLO !!! Is this Working ???")
 
     try {
         // Connect to the MongoDB client
